@@ -1,0 +1,371 @@
+/* staff.css – scoped to staff-page */
+
+.staff-page {
+  padding: 24px 0;
+}
+
+.staff-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.staff-title {
+  margin: 0;
+  font-size: 1.6rem;
+}
+
+.staff-subtitle {
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+/* Cards */
+.staff-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 18px;
+}
+
+.staff-card {
+  background: var(--bg-panel);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--accent-soft);
+  box-shadow: var(--shadow-strong);
+  padding: 20px 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.staff-card-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.staff-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 999px;
+  background: rgba(79, 70, 229, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+}
+
+.staff-card-header h3 {
+  margin: 0 0 4px;
+  font-size: 1.05rem;
+}
+
+.staff-card-header p {
+  margin: 0;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.staff-list {
+  margin: 0;
+  padding-left: 18px;
+  font-size: 0.86rem;
+  color: var(--text-muted);
+}
+
+.staff-list li + li {
+  margin-top: 4px;
+}
+
+.staff-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 6px;
+}
+
+.staff-page .btn-primary,
+.staff-page .btn-outline {
+  border-radius: var(--radius-pill);
+  padding: 8px 14px;
+  font-size: 0.85rem;
+  cursor: pointer;
+  border: 1px solid transparent;
+  background: transparent;
+  color: var(--text-main);
+  transition: all 0.2s ease;
+}
+
+.staff-page .btn-primary {
+  border-color: var(--accent);
+  background: rgba(79, 70, 229, 0.25);
+}
+
+.staff-page .btn-primary:hover {
+  background: var(--accent);
+}
+
+.staff-page .btn-outline {
+  border-color: var(--border-subtle);
+}
+
+.staff-page .btn-outline:hover {
+  background: rgba(148, 163, 184, 0.1);
+}
+
+/* Panels */
+.staff-panel {
+  margin-top: 22px;
+  padding: 16px 18px;
+  background: var(--bg-panel);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-subtle);
+  box-shadow: var(--shadow-soft);
+}
+
+.staff-panel-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+
+.staff-panel-header h3 {
+  margin: 0;
+  font-size: 1rem;
+}
+
+.staff-panel-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.staff-panel-actions input[type="text"],
+.staff-panel-actions select {
+  padding: 6px 10px;
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--border-subtle);
+  background: var(--bg-main);
+  color: var(--text-main);
+  font-size: 0.85rem;
+}
+
+.staff-panel-body {
+  font-size: 0.85rem;
+}
+
+.staff-split {
+  display: flex;
+  gap: 14px;
+}
+
+.staff-left,
+.staff-right {
+  flex: 1 1 0;
+}
+
+/* Staff table */
+.staff-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.staff-table th,
+.staff-table td {
+  padding: 6px 8px;
+  border-bottom: 1px solid rgba(148, 163, 184, 0.35);
+}
+
+.staff-table th {
+  text-align: left;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.staff-table tbody tr {
+  cursor: pointer;
+}
+
+.staff-table tbody tr:hover {
+  background: rgba(148, 163, 184, 0.08);
+}
+
+/* Staff details card with avatar circle */
+.staff-details {
+  background: var(--bg-main);
+  border-radius: var(--radius-lg);
+  border: 1px solid rgba(129, 140, 248, 0.9); /* dark purple border */
+  padding: 14px 16px;
+  box-shadow: 0 0 0 1px rgba(79, 70, 229, 0.35);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.staff-details-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.staff-avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 999px;
+  background: radial-gradient(circle at 30% 30%, #a855f7, #4f46e5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #f9fafb;
+}
+
+.staff-details h4 {
+  margin: 0;
+}
+
+.staff-details p {
+  margin: 0;
+}
+
+.staff-details .staff-meta {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.staff-details-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 6px;
+}
+
+.staff-details-forms {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.staff-details-forms label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.8rem;
+}
+
+.staff-details-forms input[type="text"],
+.staff-details-forms input[type="number"] {
+  padding: 4px 6px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-subtle);
+  background: var(--bg-main);
+  color: var(--text-main);
+  font-size: 0.8rem;
+}
+
+/* Forms */
+.staff-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.staff-page .form-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.staff-page .form-row label {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  flex: 1 1 180px;
+}
+
+.staff-page input[type="text"],
+.staff-page input[type="number"],
+.staff-page select,
+.staff-page textarea {
+  padding: 6px 8px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-subtle);
+  background: var(--bg-main);
+  color: var(--text-main);
+  font-size: 0.85rem;
+}
+
+.form-status {
+  margin-left: 8px;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.help-text {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+}
+
+/* Meeting list */
+.meeting-list {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.meeting-list li + li {
+  margin-top: 6px;
+}
+
+/* Confirm modal (reused styling) */
+.confirm-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.confirm-dialog {
+  background: var(--bg-panel);
+  border-radius: var(--radius-lg);
+  padding: 18px 20px;
+  border: 1px solid rgba(129, 140, 248, 0.9);
+  box-shadow: 0 20px 60px rgba(15, 23, 42, 0.85);
+  max-width: 360px;
+  width: 100%;
+}
+
+.confirm-dialog h4 {
+  margin: 0 0 6px;
+}
+
+.confirm-dialog p {
+  margin: 0 0 14px;
+  font-size: 0.9rem;
+}
+
+.confirm-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+/* Responsive */
+@media (max-width: 720px) {
+  .staff-grid {
+    grid-template-columns: 1fr;
+  }
+  .staff-split {
+    flex-direction: column;
+  }
+}

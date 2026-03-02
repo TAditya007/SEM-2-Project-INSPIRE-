@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>INSPIRE – Industry Networked Smart Production Integration Resource</title>
+    <!-- ✅ CO5: SEO Meta Tags -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="INSPIRE: Real-time factory dashboard for automotive production monitoring, warehouse ops, smart alerts, and management. Hyderabad-based Industry 4.0 platform.">
+    <meta name="keywords" content="factory dashboard, automotive manufacturing, IoT production, warehouse management, Industry 4.0, smart alerts">
+    <meta name="author" content="INSPIRE Factory Network">
+    <meta name="robots" content="index, follow">
+    
+    <!-- ✅ CO5: Open Graph / Social SEO -->
+    <meta property="og:title" content="INSPIRE – Smart Factory Dashboard">
+    <meta property="og:description" content="Real-time production, warehouse, and alerts for automotive manufacturing excellence.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://inspire-factory.netlify.app/">
+    
+    <!-- ✅ CO5: PWA Manifest / Service Worker Ready -->
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#6b4fae">
+    
+    <link rel="stylesheet" href="../CSS/home.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- ✅ CO5: Preload critical resources (performance/SEO) -->
+    <link rel="preload" href="../CSS/home.css" as="style">
+    <link rel="preload" href="../js/home.js" as="script">
+</head>
+<body>
+    <!-- HEADER -->
+    <header class="site-header">
+        <!-- Utility bar -->
+        <div class="utility-bar">
+            <div class="utility-left"></div>
+            <div class="utility-right">
+                <a href="#news">News</a>
+                <a href="#careers">Careers</a>
+                <a href="#contact">Contact us</a>
+            </div>
+        </div>
+
+        <!-- Main nav -->
+        <div class="main-nav">
+            <div class="brand">
+                <span class="brand-acronym">INSPIRE</span>
+                <span class="brand-full">Industry Networked Smart Production Integration Resource</span>
+            </div>
+
+            <nav class="nav-links">
+                <a href="#" class="nav-link nav-active">Home</a>
+                <a href="#about" class="nav-link">About us</a>
+                <a href="login.html" class="nav-link nav-button">Login</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <main class="content">
+        <!-- Hero -->
+        <section class="hero-section">
+            <div class="hero-bg-overlay"></div>
+            <h1>Smart Production for Automotive Excellence</h1>
+            <p>INSPIRE networks your factory floor with real-time dashboards for production, warehouse, alerts, and management—driving efficiency across car manufacturing operations.</p>
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <span class="stat-number" data-target="99.9">99.9</span><span>% Uptime</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number" data-target="250">250</span><span>K Units/Month</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number" data-target="0.1">0.1</span><span>% Defects</span>
+                </div>
+            </div>
+            <div class="hero-actions">
+                <a href="#features" class="btn-outline">Discover Features</a>
+            </div>
+        </section>
+
+        <!-- News -->
+        <section id="news" class="content-section">
+            <h2>Latest Updates</h2>
+            <article class="card news-card">
+                <h3>INSPIRE Platform Goes Live</h3>
+                <p>Full production monitoring now available with integrated warehouse and alerts systems for seamless factory operations.</p>
+            </article>
+        </section>
+
+        <!-- Features -->
+        <section id="features" class="content-section">
+            <h2>Core Factory Capabilities</h2>
+            <p>Real-time insights optimized for high-volume automotive production.</p>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon"></div>
+                    <h3>Production Lines</h3>
+                    <p>Live KPIs, OEE tracking, and line balancing across assembly stations.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon"></div>
+                    <h3>Warehouse Ops</h3>
+                    <p>Inventory levels, picking routes, and automated replenishment alerts.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon"></div>
+                    <h3>Smart Alerts</h3>
+                    <p>Priority notifications for downtime, quality, and safety incidents.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- About block -->
+        <section id="about" class="content-section">
+            <h2>About INSPIRE</h2>
+            <p>Enterprise platform connecting production networks for next-gen car manufacturing. Deployed from Hyderabad to global facilities, empowering data-driven decisions.</p>
+        </section>
+
+        <!-- Careers placeholder -->
+        <section id="careers" class="content-section">
+            <h2>Careers & Expansion</h2>
+            <p>Scaling with IoT sensors, AI maintenance prediction, and cloud orchestration for Industry 4.0 automotive leaders.</p>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="site-footer" id="contact">
+        <div class="footer-columns">
+            <div class="footer-column">
+                <h4>About INSPIRE</h4>
+                <p>Advanced manufacturing platform optimizing production networks for automotive excellence. Hyderabad, Telangana, India.</p>
+            </div>
+            <div class="footer-column">
+                <h4>Contact</h4>
+                <p>Email: info@inspire-factory.com</p>
+                <p>Global operations from Hyderabad hub</p>
+            </div>
+        </div>
+        <div class="footer-bottom">© 2026 INSPIRE. All rights reserved.</div>
+    </footer>
+
+    <!-- ✅ CO5: ES6 Module Import (modern JS) -->
+    <script type="module" src="../js/home.js"></script>
+    
+    <!-- ✅ CO5: Service Worker Registration (PWA/offline-ready) -->
+    <script>
+        // CO5: PWA Service Worker (progressive enhancement)
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/sw.js')
+                    .then(reg => console.log('✅ SW registered:', reg))
+                    .catch(err => console.log('SW failed:', err));
+            });
+        }
+    </script>
+</body>
+</html>

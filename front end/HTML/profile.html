@@ -1,0 +1,77 @@
+<!-- profile.html – injected into #dynamicContent -->
+<div class="profile-page">
+  <div class="profile-container">
+    <h2 class="profile-title">Profile Settings</h2>
+    <p class="profile-subtitle">Manage your account and security</p>
+
+    <!-- User info card -->
+    <section class="profile-card">
+      <h3 class="card-title">Account Information</h3>
+      <div class="info-row">
+        <span class="info-label">Email:</span>
+        <span class="info-value" id="profileEmail">admin@inspire.com</span>
+      </div>
+      <div class="info-row">
+        <span class="info-label">Department:</span>
+        <span class="info-value" id="profileDept">Administration</span>
+      </div>
+      <div class="info-row">
+        <span class="info-label">Last Login:</span>
+        <span class="info-value" id="profileLastLogin">Just now</span>
+      </div>
+    </section>
+
+    <!-- Password change card -->
+    <section class="profile-card">
+      <h3 class="card-title">Change Password</h3>
+      <form class="password-form" id="passwordForm">
+        <div class="form-field">
+          <label for="currentPassword">Current Password</label>
+          <input 
+            type="password" 
+            id="currentPassword" 
+            placeholder="••••••••"
+            required>
+        </div>
+        
+        <div class="form-field">
+          <label for="newPassword">New Password</label>
+          <input 
+            type="password" 
+            id="newPassword" 
+            placeholder="••••••••"
+            required>
+        </div>
+
+        <div class="form-field">
+          <label for="confirmPassword">Confirm New Password</label>
+          <input 
+            type="password" 
+            id="confirmPassword" 
+            placeholder="••••••••"
+            required>
+        </div>
+
+        <div class="form-actions">
+          <button type="submit" class="btn-primary">Update Password</button>
+          <button type="button" class="btn-secondary" id="cancelBtn">Cancel</button>
+        </div>
+
+        <!-- Success/Error messages -->
+        <p class="message success-message" id="successMsg" style="display:none;">
+          ✅ Password updated successfully!
+        </p>
+        <p class="message error-message" id="errorMsg" style="display:none;">
+          ❌ Passwords don't match or current password is wrong
+        </p>
+      </form>
+    </section>
+
+    <!-- Logout section -->
+    <section class="profile-card danger-zone">
+      <h3 class="card-title">Session</h3>
+      <p class="card-text">End your current session and return to login.</p>
+      <button class="btn-danger" id="logoutBtnProfile">Logout</button>
+    </section>
+  </div>
+</div>

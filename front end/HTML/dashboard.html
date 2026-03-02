@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Dashboard</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<span id="backend-status" class="backend-status">Backend: checking…</span>
+
+  <!-- Main layout + colors -->
+  <link rel="stylesheet" href="/front end/CSS/dashboard.css" />
+  <!-- Section-specific styles (profile, etc.) -->
+  <link rel="stylesheet" href="/front end/CSS/profile.css" />
+  <link rel="stylesheet" href="/front end/CSS/management.css" />
+  <link rel="stylesheet" href="/front end/CSS/production.css" />
+  <link rel="stylesheet" href="/front end/CSS/warehouse.css" /> 
+  <link rel="stylesheet" href="/front end/CSS/staff.css" /> 
+  <link rel="stylesheet" href="/front end/CSS/overview.css" />
+  <link rel="stylesheet" href="/front end/CSS/alerts.css" />
+  <!-- Add more if you create them: management.css, analytics.css, ... -->
+</head>
+<body>
+  <div class="app-shell">
+    <!-- SIDEBAR -->
+    <aside id="sidebar" class="sidebar">
+      <div class="sidebar-header">
+        <button id="collapseToggle" class="collapse-toggle">☰</button>
+        <div class="logo-dot"></div>
+        <div class="logo-texts">
+          <span class="logo-main">Car Factory</span>
+          <span class="logo-sub">Control Center</span>
+        </div>
+      </div>
+
+      <nav class="nav">
+
+        <button class="nav-item nav-item-active" data-section="overview">
+          <div class="nav-icon">O</div>
+          
+          <span class="nav-text">Overview</span>
+        </button>
+
+        <span class="nav-label">Workspace</span>
+
+        <button class="nav-item" data-section="production">
+          <div class="nav-icon">P</div>
+          <span class="nav-text">Production</span>
+        </button>
+
+        <button class="nav-item" data-section="warehouse">
+          <div class="nav-icon">W</div>
+          <span class="nav-text">Warehouse</span>
+        </button>
+
+         <button class="nav-item" data-section="staff">
+          <div class="nav-icon">S</div>
+          <span class="nav-text">Staff</span>
+        </button>
+
+         <button class="nav-item" data-section="management">
+          <div class="nav-icon">M</div>
+          <span class="nav-text">Management</span>
+        </button>
+
+        <button class="nav-item" data-section="profile">
+          <div class="nav-icon">p</div>
+          <span class="nav-text">Profile</span>
+        </button>
+
+       
+
+        
+      </nav>
+
+      <button id="logoutBtn" class="logout-btn">Logout</button>
+    </aside>
+
+    <!-- MAIN -->
+    <main class="main">
+      <header class="topbar">
+        <h1 id="pageTitle" class="page-title">Overview</h1>
+      </header>
+
+      <!-- Single dynamic panel where all files load -->
+      <div class="panels">
+        <section id="panel-dynamic" class="panel panel-active">
+          <div id="dynamicContent">
+            <p class="panel-text">
+              Select a section from the sidebar to view details.
+            </p>
+          </div>
+        </section>
+      </div>
+    </main>
+  </div>
+
+  <script src="../js/dashboard.js"></script>
+  <script src="../js/management.js"></script>
+  <script src="../js/production.js"></script>
+  <script src="../js/warehouse.js"></script>  
+  <script src="../js/staff.js"></script>
+  <script src="../js/overview.js"></script>
+  <script src="../js/profile.js"></script>
+  <script src="../js/alerts.js"></script>
+
+</body>
+</html>
