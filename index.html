@@ -25,8 +25,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
     <!-- ✅ CO5: Preload critical resources (performance/SEO) -->
-    <link rel="stylesheet" href="../css/home.css" as="style">
-    <link rel="preload" href="../js/home.js" as="script">
+   
 </head>
 <body>
     <!-- HEADER -->
@@ -148,8 +147,7 @@
         // CO5: PWA Service Worker (progressive enhancement)
         if ('serviceWorker' in navigator) {
             window.addEventListener('load', () => {
-                navigator.serviceWorker.register('/sw.js')
-                    .then(reg => console.log('✅ SW registered:', reg))
+                    then(reg => console.log('✅ SW registered:', reg))
                     .catch(err => console.log('SW failed:', err));
             });
         }
