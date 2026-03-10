@@ -1,0 +1,209 @@
+<!-- management.html – injected into #dynamicContent -->
+<div class="management-page">
+  <div class="management-container">
+    <h2 class="management-title">Management</h2>
+    <p class="management-subtitle">
+      Manage machinery and car production lines.
+    </p>
+
+    <!-- Two main feature cards -->
+    <div class="management-grid">
+      
+      <!-- Card 1: Machinery Management -->
+      <section class="management-card">
+        <div class="management-card-header">
+          <div class="management-icon">🛠</div>
+          <div>
+            <h3>Machinery</h3>
+            <p>View, search, add and remove machines.</p>
+          </div>
+        </div>
+
+        <ul class="management-list">
+          <li>Browse existing machines with live search.</li>
+          <li>View full details in a highlighted card.</li>
+          <li>Remove machines with a custom confirm dialog.</li>
+          <li>Add new machines via a guided form.</li>
+        </ul>
+
+        <div class="management-actions">
+          <button class="btn-outline" id="machinesExistingBtn">Existing Machines</button>
+          <button class="btn-primary" id="machinesAddBtn">Add Machine</button>
+        </div>
+      </section>
+
+      <!-- Card 2: Production Lines Management -->
+      <section class="management-card">
+        <div class="management-card-header">
+          <div class="management-icon">🚗</div>
+          <div>
+            <h3>Production Lines</h3>
+            <p>View and create car production lines.</p>
+          </div>
+        </div>
+
+        <ul class="management-list">
+          <li>See predefined Sedan and SUV lines.</li>
+          <li>Create new lines by choosing machines in order.</li>
+          <li>Each line shown as a clean card layout.</li>
+        </ul>
+
+        <div class="management-actions">
+          <button class="btn-outline" id="linesExistingBtn">Existing Lines</button>
+          <button class="btn-primary" id="linesAddBtn">Create Line</button>
+        </div>
+      </section>
+    </div>
+
+    <!-- ========== MACHINES PANELS ========== -->
+    
+    <!-- Panel: Existing Machines -->
+    <section id="machinesExistingPanel" class="mgmt-panel" style="display:none;">
+      <div class="mgmt-panel-header">
+        <h3>Existing Machines</h3>
+        <div class="mgmt-panel-actions">
+          <input type="text" id="machineSearchInput" placeholder="Search machines..." />
+          <button class="btn-outline" id="machineSearchBtn">Search</button>
+          <select id="machineSortSelect">
+            <option value="">Sort by...</option>
+            <option value="efficiency">Efficiency</option>
+            <option value="name">Name</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="mgmt-panel-body mgmt-split">
+        <div class="mgmt-left">
+          <table class="machine-table">
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Dept</th>
+                <th>Status</th>
+                <th>Eff (%)</th>
+              </tr>
+            </thead>
+            <tbody id="machineTableBody">
+              <!-- Populated by JS -->
+            </tbody>
+          </table>
+        </div>
+
+        <div class="mgmt-right">
+          <div id="machineDetails" class="machine-details">
+            <h4>Machine details</h4>
+            <p>Select a machine from the list.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Panel: Add Machine -->
+    <section id="machinesAddPanel" class="mgmt-panel" style="display:none;">
+      <div class="mgmt-panel-header">
+        <h3>Add Machine</h3>
+      </div>
+      <div class="mgmt-panel-body">
+        <form id="machineAddForm" class="mgmt-form">
+          <div class="form-row">
+            <label>
+              Name
+              <input type="text" name="name" required />
+            </label>
+            <label>
+              Type
+              <input type="text" name="type" required />
+            </label>
+          </div>
+          <div class="form-row">
+            <label>
+              Department
+              <input type="text" name="department" required />
+            </label>
+            <label>
+              Status
+              <select name="status" required>
+                <option value="RUNNING">Running</option>
+                <option value="IDLE">Idle</option>
+                <option value="MAINTENANCE">Maintenance</option>
+              </select>
+            </label>
+          </div>
+          <div class="form-row">
+            <label>
+              Efficiency (%)
+              <input type="number" name="efficiency" min="0" max="100" value="85" required />
+            </label>
+          </div>
+          <button type="submit" class="btn-primary">Save Machine</button>
+          <span id="machineAddStatus" class="form-status"></span>
+        </form>
+      </div>
+    </section>
+
+    <!-- ========== PRODUCTION LINES PANELS ========== -->
+    
+    <!-- Panel: Existing Production Lines -->
+    <section id="linesExistingPanel" class="mgmt-panel" style="display:none;">
+      <div class="mgmt-panel-header">
+        <h3>Existing Production Lines</h3>
+      </div>
+      <!-- ✅ CRITICAL: Clean container for line cards -->
+      <div class="mgmt-panel-body" id="lineCardGrid">
+        <!-- Populated by JS: loadLines() -->
+      </div>
+    </section>
+
+    <!-- Panel: Create Production Line -->
+    <section id="linesAddPanel" class="mgmt-panel" style="display:none;">
+      <div class="mgmt-panel-header">
+        <h3>Create Production Line</h3>
+      </div>
+      <div class="mgmt-panel-body mgmt-split">
+        <form id="lineAddForm" class="mgmt-form mgmt-left">
+          <div class="form-row">
+            <label>
+              Line Name
+              <input type="text" name="name" required />
+            </label>
+            <label>
+              Product
+              <input type="text" name="product" required />
+            </label>
+          </div>
+          <div class="form-row">
+            <label>
+              Machines (select in order)
+              <select id="lineMachineSelect" multiple size="8">
+                <!-- Populated by JS: loadMachinesForLines() -->
+              </select>
+            </label>
+          </div>
+          <p class="help-text">
+            Hold Ctrl (Cmd on Mac) to select multiple machines in order.
+          </p>
+          <button type="submit" class="btn-primary">Save Line</button>
+          <span id="lineAddStatus" class="form-status"></span>
+        </form>
+
+        <div class="mgmt-right">
+          <h4>Preview</h4>
+          <p id="linePreview">No machines selected yet.</p>
+        </div>
+      </div>
+    </section>
+  </div>
+</div>
+
+<!-- Custom confirmation modal -->
+<div id="confirmModal" class="confirm-modal" style="display:none;">
+  <div class="confirm-dialog">
+    <h4 id="confirmTitle">Confirm action</h4>
+    <p id="confirmMessage">Are you sure?</p>
+    <div class="confirm-actions">
+      <button id="confirmCancelBtn" class="btn-outline">Cancel</button>
+      <button id="confirmOkBtn" class="btn-primary">Confirm</button>
+    </div>
+  </div>
+</div>

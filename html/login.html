@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>INSPIRE – Login</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../CSS/login.css">
+</head>
+<body>
+  <div class="bg-overlay"></div>
+
+  <header class="brand-bar">
+    <div class="brand-logo">
+      <a href="../HTML/home.html" class="inspire-btn">INSPIRE</a>
+    </div>
+  </header>
+
+  <main class="auth-wrapper">
+    <section class="auth-card">
+      <h1 class="auth-title">Sign in to INSPIRE</h1>
+      <p class="auth-subtitle">
+        Manage machines, queues, and inventory from a single smart dashboard.
+      </p>
+
+      <form class="auth-form" id="loginForm">
+        <div class="field">
+          <label for="email">Email / User ID</label>
+          <input
+            type="text"
+            id="email"
+            name="email"
+            placeholder="admin@inspire.com"
+            required>
+        </div>
+
+        <div class="field field-password">
+          <label for="password">Password</label>
+          <div class="password-wrapper">
+            <input
+              type="password"
+              id="password"
+              name="password"
+              placeholder="••••••••"
+              required>
+            <button type="button" class="password-toggle" id="passwordToggle" aria-label="Show password">
+              👁
+            </button>
+          </div>
+        </div>
+
+        <div class="field field-inline">
+          <label class="remember">
+            <input type="checkbox" name="remember" checked>
+            <span>Remember this device</span>
+          </label>
+        </div>
+
+        <!-- Error bar -->
+        <p class="error-bar" id="errorBar"></p>
+
+        <button type="submit" class="btn-primary">Login</button>
+      </form>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <span>© 2026 INSPIRE Production Management</span>
+  </footer>
+
+  <script src="../JS/login.js"></script>
+</body>
+</html>

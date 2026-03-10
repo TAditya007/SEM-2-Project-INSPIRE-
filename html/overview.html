@@ -1,0 +1,114 @@
+<!-- overview.html – injected into #dynamicContent -->
+
+<div class="overview-page">
+  <div class="overview-container">
+    <h2 class="overview-title">Overview</h2>
+    <p class="overview-subtitle">
+      High-level snapshot of machines, production, and warehouse.
+    </p>
+
+    <!-- KPI tiles -->
+    <section class="overview-section">
+      <h3 class="section-title">Key Metrics</h3>
+      <div class="overview-kpi-grid">
+        <!-- Machines -->
+        <article class="kpi-card">
+          <header class="kpi-header">
+            <span class="kpi-label">Machines</span>
+          </header>
+          <div class="kpi-main">
+            <span id="kpiTotalMachines" class="kpi-value">-</span>
+            <span class="kpi-unit">total</span>
+          </div>
+          <div class="kpi-footer">
+            <span id="kpiRunningMachines" class="kpi-pill">Running: -</span>
+            <span id="kpiIdleMachines" class="kpi-pill">Idle: -</span>
+            <span id="kpiMaintenanceMachines" class="kpi-pill">Maint: -</span>
+          </div>
+        </article>
+
+        <!-- Production -->
+        <article class="kpi-card">
+          <header class="kpi-header">
+            <span class="kpi-label">Production</span>
+          </header>
+          <div class="kpi-main">
+            <span id="kpiActiveRuns" class="kpi-value">-</span>
+            <span class="kpi-unit">active runs</span>
+          </div>
+          <div class="kpi-footer">
+            <span id="kpiQueuedRuns" class="kpi-pill">Queued: -</span>
+            <span id="kpiCompletedToday" class="kpi-pill">Done today: -</span>
+          </div>
+        </article>
+
+        <!-- Warehouse -->
+        <article class="kpi-card">
+          <header class="kpi-header">
+            <span class="kpi-label">Warehouse</span>
+          </header>
+          <div class="kpi-main">
+            <span id="kpiTotalStock" class="kpi-value">-</span>
+            <span class="kpi-unit">available units</span>
+          </div>
+          <div class="kpi-footer">
+            <span id="kpiProducts" class="kpi-pill">Products: -</span>
+            <span id="kpiLowStock" class="kpi-pill">Low stock: -</span>
+            <span id="kpiExpiring" class="kpi-pill">Expiring soon: -</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+
+       <!-- Quick navigation -->
+    <section class="overview-section">
+      <h3 class="section-title">Quick Navigation</h3>
+      <div class="overview-quick-grid">
+        <button class="quick-card" id="goProduction">
+          <div class="quick-icon"></div>
+          <div class="quick-body">
+            <h4>Production</h4>
+            <p>View active runs and history.</p>
+            <p class="quick-meta" id="quickProdInfo">
+              Active: -, Queued: -
+            </p>
+          </div>
+        </button>
+
+        <button class="quick-card" id="goWarehouse">
+          <div class="quick-icon"></div>
+          <div class="quick-body">
+            <h4>Warehouse</h4>
+            <p>Check batches and inventory.</p>
+            <p class="quick-meta" id="quickWhInfo">
+              Stock: -, Low stock: -
+            </p>
+          </div>
+        </button>
+
+        <button class="quick-card" id="goManagement">
+          <div class="quick-icon"></div>
+          <div class="quick-body">
+            <h4>Management</h4>
+            <p>Manage machines and lines.</p>
+            <p class="quick-meta" id="quickMgmtInfo">
+              Machines: -, Lines: -
+            </p>
+          </div>
+        </button>
+      </div>
+    </section>
+
+   <!-- Recent alerts section -->
+<section class="overview-section" id="recentAlertsSection" style="display:none;">
+  <h3 class="section-title">Recent Alerts</h3>
+  <div id="recentAlertsList" class="alerts-compact-list"></div>
+  <div class="alerts-actions">
+    <button class="btn-outline" id="showAlertsBtn">View All Alerts →</button>
+  </div>
+</section>
+
+
+  </div>
+</div>

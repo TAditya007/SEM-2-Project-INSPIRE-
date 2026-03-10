@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Alerts - Inspire Manufacturing</title>
+  <link rel="stylesheet" href="../CSS/alerts.css">
+</head>
+<body>
+  <!-- alerts.html – injected into #dynamicContent -->
+  <div class="alerts-page">
+    <div class="alerts-container">
+      <h2 class="alerts-title">Alerts</h2>
+      <p class="alerts-subtitle">Monitor machines, production, and warehouse issues.</p>
+
+      <section class="alerts-panel">
+        <div class="alerts-panel-header">
+          <h3>Filters</h3>
+          <div class="alerts-filters">
+            <select id="alertTypeFilter">
+              <option value="">All Types</option>
+              <option value="MACHINE">Machine</option>
+              <option value="PRODUCTION">Production</option>
+              <option value="WAREHOUSE">Warehouse</option>
+            </select>
+            <select id="alertSeverityFilter">
+              <option value="">All Severity</option>
+              <option value="INFO">Info</option>
+              <option value="WARNING">Warning</option>
+              <option value="CRITICAL">Critical</option>
+            </select>
+            <select id="alertAckFilter">
+              <option value="">All</option>
+              <option value="false">Open</option>
+              <option value="true">Acknowledged</option>
+            </select>
+            <button class="btn-outline" id="alertsRefreshBtn">Refresh</button>
+          </div>
+        </div>
+
+        <div class="alerts-panel-body">
+          <div id="alertsList" class="alerts-list">
+            <div class="alert-card">Loading alerts...</div>
+          </div>
+        </section>
+      </div>
+    </div>
+
+  <script src="../JS/alerts.js"></script>
+</body>
+</html>
